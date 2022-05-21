@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Список авторов статей{% endblock %}
+{% block header %}Список авторов статей{% endblock %}
+{% block content %}
+  <table border="1" width="100%" cellpadding="5">
+      <tr>
+        <th>ФИО автора</th>
+        <th>Дата рождения</th>
+        <th>Количество статей</th>
+      </tr>
+      {% for author in authors %}
+        <tr>
+          <td>{{ author.name }}</td>
+          <td>{{ author.birth_date }}</td>
+          <td>{{ author.articles.count }}</td>
+        </tr>
+      {% endfor %}
+      </tr> 
+  </table>
+{% endblock %}

@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light" style="background-color: #e8fde3;">
+  <a class="navbar-brand" href="/"><span style="color:#ff00c3">A</span>rticles</a>
+  <nav class="my-2 my-md-0 mr-md-3">
+    {% if user.is_authenticated %}
+      Пользователь: {{ user.username }}
+      <a class="p-2 text-dark" href="{% url 'logout' %}">Выйти</a>
+    {% else %}
+      <a class="p-2 text-dark" href="{% url 'login' %}">Войти</a> |
+    {% endif %}
+  </nav>
+</nav>
